@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>
+	Blog
+</h1>
+{% if not posts %}
+<div class="panel panel-default">
+	<div class="panel-body">
+		No posts found
+	</div>
+</div>
+{% else %}
+{% for post in posts %}
+{% include "postview.html" %}
+{% endfor %}
+{% endif %}
+{% endblock %}
+
+

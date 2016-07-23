@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Multi-user Blog</title>
+		<link rel="stylesheet" href="../static/css/bootstrap_style_uncss.min.css">
+	</head>
+	<body>
+		<header>
+			<nav class="navbar navbar-default navbar-fixed-top">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="/">Blog</a>
+					</div>
+					<div class="navbar-collapse collapse">
+						<ul class="nav navbar-nav">
+							<li class="nav-link"><a href="/newpost">New Post</a></li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							{% if not user %}
+							<li class="nav-link"><a href="/login">Login</a></li>
+							<li class="nav-link"><a href="/signup">SignUp</a></li>
+							{% else %}
+							<li class="nav-link"><div class="username">{{user.username}}</div></li>
+							<li class="nav-link"><a href="/logout">Logout</a></li>
+							{% endif %}
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<div class="container">
+  			{% block content %}
+  			{% endblock %}
+  			</div>
+  			<div class="fake-footer">
+  			</div>
+		</main>
+		<footer>
+			<hr>
+		</footer>
+		<script src="/static/js/jquery-1.12.4.min.js"></script>
+		<script src="/static/js/bootstrap.min.js"></script>
+	</body>
+</html>

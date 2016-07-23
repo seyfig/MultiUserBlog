@@ -1,0 +1,218 @@
+body {
+	font-family: "Heebo",sans-serif;
+	color: #2d3c49;
+	font-weight: 300;
+}
+
+main {
+	position: relative;
+	top: 50px;
+}
+
+.alert {
+	color: red;
+}
+
+.username {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.form-control.txtarea {
+	height: 200px;
+}
+
+.panel-flex {
+	display: flex;
+	display: -webkit-flex;
+}
+
+.panel-left, .panel-right {
+	width: 50%;
+}
+
+.panel-right {
+	text-align: right;
+}
+
+.panel-title {
+	overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    white-space: nowrap;
+}
+
+.panel-info>.panel-footer {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+
+.comment-footer {
+	padding: 3px 5px;
+	font-size: 80%;
+}
+
+.panel-comment > .panel-body {
+	overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
+    max-height: 6.9em;
+}
+
+/* PREVIOUS */
+/* TODO minify, from portfolio project review */
+h2,
+h3 {
+	font-size: 36px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.text-muted {
+	color: #7d97ad;
+}
+
+.text-thin {
+	font-weight: 100;
+}
+
+@media screen and (max-width: 991px) and (min-width: 768px) {
+	.img-project {
+		max-height: 200px;
+	}
+}
+
+.big-project-img{
+    margin: 15px 0;
+}
+
+.main-article {
+	position: relative;
+    margin-top: 175px;
+}
+
+footer {
+	text-align: center;
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    background-color: #fff;
+    bottom: 0;
+}
+
+.fake-footer {
+	height: 50px;
+	width: 100%;
+}
+
+/* Header*/
+header {
+    position: fixed;
+    width: 100%;
+    top: -30px;
+    background-color: #fff;
+    z-index: 1;
+}
+
+.header-row {
+    margin-top: 20px;
+}
+
+.header-row > .text-right {
+	margin-top: 10px;
+}
+.header-row > div > h1 {
+	margin-bottom: 0px;
+}
+
+.header-row > div > h4 {
+	margin-top: 0px;
+}
+
+
+/* Title */
+.logo-div {
+	min-width: 95px;
+	overflow-y: hidden;
+}
+
+.title-logo {
+    margin-left: -35px;
+	width: 150px;
+	height: 150px;
+}
+
+.title-super {
+	font-size: 60px;
+}
+
+@media screen and (min-width: 631px) {
+	.title-super {
+		font-size: 60px;
+	}
+}
+
+@media screen and (min-width: 431px) and (max-width: 630px) {
+	.title-super {
+		font-size: 40px;
+		margin-top: 30px;
+	}
+}
+
+@media screen and (max-width: 430px) {
+	.title-super {
+		font-size: 30px;
+		margin-top: 35px;
+	}
+}
+
+
+/* navbar */
+.navbar-default {
+	background-color: #02b3e4;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #2d3c49;
+}
+
+.navbar-default .navbar-brand {
+    color: #2d3c49;
+}
+
+.navbar-default .navbar-toggle:hover {
+    background-color: #7d97ad;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: #7d97ad;
+}
+
+
+/* Zocial */
+.zocial:before {
+  color: black;
+  display: inline-block;
+  font-family: 'zocial', sans-serif;
+  text-shadow: 3px 3px 3px #aaa;
+  width: 2em;
+}
+
+.zocial-div {
+  line-height: 2em;
+}
+
+a:hover .zocial-div:before {
+  color: #3d85c6;
+}
+
+.zocial-div a {
+  margin: 0 1em 0 0;
+}
+
+.zocial-div a:last-of-type {
+  margin: 0;
+}

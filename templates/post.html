@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>
+	View Post
+</h1>
+{% for post in posts %}
+{% include "postview.html" %}
+{% set comments = post.get_comments() %}
+{% include "comments.html" %}
+{% endfor %}
+{% endblock %}

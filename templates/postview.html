@@ -1,0 +1,49 @@
+<div class="panel panel-default">
+	<div class="panel-heading panel-flex">
+		<div class="panel-left">
+			<a href="/viewpost/{{post.key.urlsafe()}}">
+				<h3 class="panel-title">{{post.subject}}</h3>
+			</a>
+		</div>
+		<div class="panel-right">
+			<span classs="post_created datetime">{{post.created.strftime("%b %d, %Y  %H:%M")}}</span>
+		</div>
+	</div>
+	<div class="panel-body">
+		{% for l in post.content.splitlines() %}
+		{{l}}<br>
+		{% endfor %}
+	</div>
+	<div class="panel-footer panel-flex">
+		<div class="panel-left panel-flex">
+			<div class="panel-left">
+				<a href="/newcomment?post_key={{post.key.urlsafe()}}">Add Comment</a>
+			</div>
+			<div class="panel-right">
+				Total Likes: {{post.likecount}}
+			</div>
+		</div>
+		<div class="panel-right">
+			{% if user and not post.user_post(user.key) %}
+			{% set l = 'Like' %}
+			{% set u = 'Unlike' %}
+			{% set like = post.user_post_like(user.key) %}
+			{% if like == 1 %}
+			{% set l = 'Liked' %}
+			{% elif like == -1 %}
+			{% set u = 'Unliked' %}
+			{% endif %}
+			<a href="/likepost/{{post.key.urlsafe()}}">{{l}}
+			</a>
+			/
+			<a href="/unlikepost/{{post.key.urlsafe()}}">{{u}}</a>
+			{% else %}
+			<a href="/editpost/{{post.key.urlsafe()}}">
+				Edit</a>
+				/
+			<a href="/deletepost/{{post.key.urlsafe()}}">
+				Delete</a>
+			{% endif %}
+		</div>
+	</div>
+</div>

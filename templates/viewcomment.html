@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>
+	View Comment
+</h1>
+<div class="panel panel-default">
+	<div class="panel-heading panel-flex">
+		<div class="panel-left">
+			<a href="/viewpost/{{comment.key.parent().urlsafe()}}">
+				Back to post
+			</a>
+		</div>
+		<div class="panel-right">
+			<span class="post_created datetime">{{comment.created.strftime("%b %d, %Y %H:%M")}}</span>
+		</div>
+	</div>
+	<div class="panel-body">
+		{% for l in comment.content.splitlines() %}
+		{{l}}<br>
+		{% endfor %}
+	</div>
+	<div class="panel-footer panel-flex comment-footer">
+		<div class="panel-left">
+			<span classs="post_created datetime">{{comment.created.strftime("%b %d, %Y %H:%M")}}</span>
+		</div>
+		<div class="panel-right">
+			{% if user and comment.user_comment(user.key) %}
+			<a href="/deletecomment/{{comment.key.urlsafe()}}">
+				Delete</a>
+				/
+			<a href="/editcomment/{{comment.key.urlsafe()}}">
+				Edit</a>
+			/
+			{% endif %}
+			<a href="/viewcomment/{{comment.key.urlsafe()}}">View</a>
+		</div>
+	</div>
+</div>
+{% endblock %}

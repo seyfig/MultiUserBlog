@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>
+	New Post
+</h1>
+<form method="post" role="form">
+	<div class="form-group">
+		<label for="subject">Subject</label>
+		<input class="form-control" type="text" value="{{subject}}" name="subject" id="subject">
+	</div>
+	<div class="form-group">
+		<label for="content">Content</label>
+		<textarea class="form-control txtarea" name="content" id="content">{{content}}</textarea>
+	</div>
+
+	<div class="form-group">
+		<div class="panel-flex">
+			<div class="panel-left">
+				<form method="post" role="form">
+					<div class="form-group">
+						<input class="btn btn-default" type="submit">
+					</div>
+				</form>
+			</div>
+			<div class="panel-right">
+				<a href="/">
+					Back to blog
+				</a>
+			</div>
+		</div>
+	</div>
+	{% if error and len(error) > 0 %}
+	<div class="form-group">
+		<label class="alert">{{error}}</label>
+	</div>
+	{% endif %}
+
+</form>
+{% endblock %}

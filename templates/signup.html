@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>
+	Signup
+</h1>
+<form method="post" role="form">
+	<div class="form-group">
+		<label for="username">Username</label>
+		<input class="form-control" type="text" value="{{username}}" name="username" id="username">
+		{% if not uvalid %}
+		<label class="alert">That's not a valid username</label>
+		{% elif not uunique %}
+		<label class="alert">That user already exists</label>
+		{% endif %}
+	</div>
+	<div class="form-group">
+		<label for="pwd">Password</label>
+		<input class="form-control" type="password" name="password" id="pwd">
+		{% if not pvalid %}
+		<label class="alert">That wasn't a valid password</label>
+		{% endif %}
+	</div>
+	<div class="form-group">
+		<label for="verify">Verify Password</label>
+		<input class="form-control" type="password" name="verify" id="verify">
+		{% if not vvalid %}
+		<label class="alert">Your passwords didn't match</label>
+		{% endif %}
+	</div>
+	<div class="form-group">
+		<label for="email">Email(optional)</label>
+		<input class="form-control" type="text" value="{{email}}" name="email" id="email">
+		{% if not evalid %}
+		<label class="alert">That's not a valid email</label>
+		{% endif %}
+	</div>
+	<div class="form-group">
+		<input class="btn btn-default" type="submit">
+	</div>
+</form>
+{% endblock %}
